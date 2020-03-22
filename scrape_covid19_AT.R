@@ -97,7 +97,7 @@ my_path <- file.path(path, main_folder, day_folder, time_folder)
 dir.create(my_path, recursive = TRUE, showWarnings = FALSE)
 
 my_save <- function(x) {
-  write.csv2(temp[[x]], file = file.path(my_path, paste0(x, ".csv")))
+  write.csv2(temp[[x]], file = file.path(my_path, paste0(x, ".csv")), row.names = FALSE)
 }
 garbage <- sapply(names(temp), my_save)
 
