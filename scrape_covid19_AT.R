@@ -6,6 +6,9 @@ library(dplyr)
 library(tidyr)
 library(magrittr)
 library(readr)
+library(here)
+
+path <- here()
 
 prefix <- "https://info.gesundheitsministerium.at/data/"
 suffix <- ".js"
@@ -90,7 +93,7 @@ main_folder <- "data"
 day_folder <- format(daytime, format = "%Y-%m-%d")
 time_folder <- format(daytime, format = "%H_%M_%S")
 
-my_path <- file.path(main_folder, day_folder, time_folder)
+my_path <- file.path(path, main_folder, day_folder, time_folder)
 dir.create(my_path, recursive = TRUE, showWarnings = FALSE)
 
 my_save <- function(x) {
